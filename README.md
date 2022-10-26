@@ -4,6 +4,20 @@ This project implements a wasmCloud actor that listens for a simply HTTP GET req
 
 A complete guided walkthough of this project is available on [YouTube](https://www.youtube.com/watch?v=7OE__0thnK4).
 
+## Important Technical Detail!
+
+If your GitHub user name contains uppercase letters (as mine does), then when you try to deploy your signed Wasm module to an OCI registry, that deployment will fail with the cryptic error message `invalid reference format`.
+
+To fix the problem:
+
+* Open the file <./.github/workflows/release.yaml>
+* Line 97 contains the following long line:
+   ```yaml
+   wash reg push ghcr.io/${{ github.REPOSITORY }}:${{ env.actor-version }} build/${{ env.actor-name }}_s.wasm -a org.opencontainers.image.source=https://github.com/${{ github.REPOSITORY }} --allow-latest
+   ```
+
+   Both occurrences of `${{ github.REPOSITORY }}` must be replaced with `<your_lowercase_user_name>/xkcdgenerator`.
+
 ## The Implementation
 
 Since all wasmCloud actors are sand-boxed, they can only perform pure, CPU-bound computations.
