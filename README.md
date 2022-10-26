@@ -10,7 +10,7 @@ If your GitHub user name contains uppercase letters (as mine does), then when yo
 
 To fix the problem:
 
-* Open the file <./.github/workflows/release.yaml>
+* Open the file []./.github/workflows/release.yaml](./.github/workflows/release.yaml)
 * Line 97 contains the following long line:
    ```yaml
    wash reg push ghcr.io/${{ github.REPOSITORY }}:${{ env.actor-version }} build/${{ env.actor-name }}_s.wasm -a org.opencontainers.image.source=https://github.com/${{ github.REPOSITORY }} --allow-latest
