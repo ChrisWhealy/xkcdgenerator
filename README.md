@@ -4,6 +4,8 @@ This project implements a wasmCloud actor that listens for a simply HTTP GET req
 
 A complete guided walkthough of this project is available on [YouTube](https://www.youtube.com/watch?v=7OE__0thnK4).
 
+Live demo can be found [here](https://long-field-4538.cosmonic.app/)
+
 ## Important Technical Detail!
 
 If your GitHub user name contains uppercase letters (as mine does), then when you try to deploy your signed Wasm module to an OCI registry, that deployment will fail with the cryptic error message `invalid reference format`.
